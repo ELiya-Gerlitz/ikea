@@ -1,7 +1,7 @@
 class FurnitureModel{
 
     public code: number
-    public furnitureTypeId: string
+    public furnitureTypeId: number
     public dimensions: string
     public color: string
     public price: number

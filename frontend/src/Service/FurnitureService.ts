@@ -1,6 +1,7 @@
 import axios from "axios";
 import FurnitureModel from "../Models/FurnitureModel";
 import appConfig from "../Utils/AppConfig";
+import FurnitureTypes from "../Models/TypesModel";
 
 async function getAllFurniture():Promise<FurnitureModel[]>{
     const response = await axios.get<FurnitureModel[]>(appConfig.furnitures)
@@ -8,6 +9,19 @@ async function getAllFurniture():Promise<FurnitureModel[]>{
     return furniture
 }
 
+
+async function getAllFurnitureTypes():Promise<FurnitureTypes[]>{
+    const response = await axios.get<FurnitureTypes[]>(appConfig.furnituresTypes)
+    const types = response.data
+    return types
+}
+
+async function postOneFurniture(furniture : FurnitureTypes):Promise<void>{
+    // await axios.post<FurnitureTypes>(appConfig.furnitures, furniture)
+}
+
 export default {
-    getAllFurniture
+    getAllFurniture,
+    getAllFurnitureTypes,
+    postOneFurniture
 }

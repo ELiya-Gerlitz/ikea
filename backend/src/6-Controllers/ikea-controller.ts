@@ -29,7 +29,7 @@ router.post("/furnitures", async( request: Request, response: Response,next: Nex
     try{
         const furnitureToAdd = new FurnitureModel(request.body)
         const addedFurniture = await ikeaLogic.addFurniture(furnitureToAdd)
-        response.json(addedFurniture)
+        response.sendStatus(201)
     }catch(err:any){
         next(err)
     }

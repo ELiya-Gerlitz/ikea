@@ -5,7 +5,7 @@ import FurnitureModel from "../4-Models/FurnitureModel";
 
 async function getAllFurnitureTypes():Promise<FurnitureModel[]>{
     const sql = `
-    SELECT furnitureType FROM furnituretype
+    SELECT * FROM furnituretype
     `
     const allCategories = await dal.execute(sql)
     return allCategories

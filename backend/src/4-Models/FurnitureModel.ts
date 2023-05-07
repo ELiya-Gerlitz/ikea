@@ -1,10 +1,10 @@
 class FurnitureModel{
 
     public code: number
-    public furnitureTypeId: string
+    public furnitureTypeId: number
     public dimensions: string
     public color: string
-    public price: number
+    public price: string
 
     public constructor(furniture : FurnitureModel){
         this.code = furniture.code

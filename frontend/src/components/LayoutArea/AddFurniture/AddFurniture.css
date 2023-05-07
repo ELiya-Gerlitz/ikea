@@ -1,3 +1,33 @@
 .AddFurniture {
-	
+	margin-left: auto;
+	margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+.AddFurniture h2{
+  color: aliceblue;
+}
+
+
+
+.AddFurniture input {
+	width: 280px;
+    height: 40px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.AddFurniture select {
+	width: 280px;
+    height: 40px;
+    border-radius: 4px;
+    margin-top: 10px;
+
+}
+
+button{
+    margin-top: 20px;
+    border-radius: 4px;
+
 }
