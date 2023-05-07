@@ -1,0 +1,10 @@
+.Card {
+	border: 1px solid salmon;
+	border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+    display: block;
+    margin-top: 20px;
+}
