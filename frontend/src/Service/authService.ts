@@ -7,21 +7,22 @@ import appConfig from "../Utils/AppConfig";
 async function register(user: UserModel):Promise<void>{
         const response= await axios.post<string>(appConfig.registerURL, user)
         const token= response.data
-        AuthStore.dispatch({type: AuthActionTypes.Register, payload: token})
+        console.log(token)
+        sessionStorage.setItem("token", token)
 }
 
-async function login(credentials: CredencialsModel):Promise<void>{
-    const response= await axios.post<string>(appConfig.loginURL, credentials)
-    const token= response.data
-    AuthStore.dispatch({type: AuthActionTypes.Login, payload: token})
-}
+// async function login(credentials: CredencialsModel):Promise<void>{
+//     const response= await axios.post<string>(appConfig.loginURL, credentials)
+//     const token= response.data
+//     AuthStore.dispatch({type: AuthActionTypes.Login, payload: token})
+// }
 
-async function logout():Promise<void>{
-    AuthStore.dispatch({type: AuthActionTypes.Logout})
-}
+// async function logout():Promise<void>{
+//     AuthStore.dispatch({type: AuthActionTypes.Logout})
+// }
 
 export default{
     register,
-    login,
-     logout
+    // login,
+    //  logout
 }
