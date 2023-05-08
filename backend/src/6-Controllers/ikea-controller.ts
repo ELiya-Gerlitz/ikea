@@ -1,6 +1,7 @@
 import express, { NextFunction, Request, Response } from "express"
 import ikeaLogic from "../5-Logic/ikeaLogic"
 import FurnitureModel from "../4-Models/FurnitureModel"
+import verifyLoggedIn from "../3-Middleware/verifyLoggedIn"
 
 
 
@@ -35,7 +36,7 @@ router.post("/furnitures", async( request: Request, response: Response,next: Nex
     }
 })
 
-router.delete("/furnitures/:code", async( request: Request, response: Response,next: NextFunction)=>{
+router.delete("/furnitures/:code", verifyLoggedIn, async( request: Request, response: Response,next: NextFunction)=>{
     try{
         const code = +request.params.code
         await ikeaLogic.deleteFurniture(code)

@@ -10,7 +10,7 @@ interface card{
 function Card(props: card): JSX.Element {
     const navigate = useNavigate()
 
-    const handleclick = (code : number)=>{
+    const handleclick = (code : number)=> {
         FurnitureService.deleteFurniture(code)
         .then(()=> {
             alert("successfully deleted!")
@@ -28,8 +28,7 @@ function Card(props: card): JSX.Element {
   <p><strong>price : </strong>{props.furniture.price}</p>
   <p><strong>code : </strong>{props.furniture.code}</p>
   <p><strong>dimensions : </strong>{props.furniture.dimensions}</p>
-  <NavLink to="#" onClick={()=>handleclick(props.furniture.code)}>delete furniture : </NavLink>
-			
+  <NavLink to="#" onClick={()=>handleclick(props.furniture.code)}>delete furniture</NavLink>
         </div>
     );
 }
