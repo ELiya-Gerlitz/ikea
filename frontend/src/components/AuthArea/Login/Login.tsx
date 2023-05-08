@@ -18,6 +18,7 @@ function Login(): JSX.Element {
 
     return (
         <div className="Login">
+            <h2>Login</h2>
 			 <form onSubmit={handleSubmit(send)}>
                 <input type="text" placeholder="username" {...register('username', CredentialsModel.usernameValidation)} />
                 <input type="password" placeholder="password" {...register('password', CredentialsModel.passwordValidation)} />

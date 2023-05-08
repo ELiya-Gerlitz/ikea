@@ -10,7 +10,6 @@ import Logout from "../../AuthArea/Logout/Logout";
 function Routing(): JSX.Element {
     return (
         <div className="Routing">
-			I am routing
             <Routes>
                 <Route path="/" element={<Home/>} />
                 <Route path="/home" element={<Home/>} />

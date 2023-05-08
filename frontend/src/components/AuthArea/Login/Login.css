@@ -1,3 +1,16 @@
-.Login {
-	
+.Login input, button{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 40px;
+        width: 250px;
+        margin-bottom: 10px;
+    
 }
+
+.Login h2{
+   text-align: center;
+   color: aliceblue;
+
+}
+

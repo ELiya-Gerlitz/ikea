@@ -6,7 +6,6 @@ import "./Layout.css";
 function Layout(): JSX.Element {
     return (
         <div className="Layout">
-			I am layout Area
             <Header/>
             <Routing/>
         </div>

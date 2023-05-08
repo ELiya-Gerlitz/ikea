@@ -1,3 +1,11 @@
 .Header {
-	
+	text-align: center;
+    font-size: large;
+}
+
+.Header h1 {
+	text-align: center;
+    color: aliceblue;
+    margin-top: 20px;
+    font-size: 72px;
 }

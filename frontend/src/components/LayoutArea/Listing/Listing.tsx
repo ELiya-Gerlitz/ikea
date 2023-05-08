@@ -17,7 +17,7 @@ function Listing(): JSX.Element {
     },[])
     return (
         <div className="Listing">
-			I am listing
+			<h2>View All Furnitures</h2>
 {furniture && 
 <>
 {furniture.map(f=> <Card key={f.code} furniture={f}/>)}

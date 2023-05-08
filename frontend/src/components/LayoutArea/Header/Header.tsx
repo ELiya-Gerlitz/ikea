@@ -6,6 +6,7 @@ import "./Header.css";
 function Header(): JSX.Element {
     return (
         <div className="Header">
+            <h1>IKEA</h1>
 			<NavBar/>
             <AuthMenu/>
         </div>
