@@ -17,11 +17,17 @@ async function getAllFurnitureTypes():Promise<FurnitureTypes[]>{
 }
 
 async function postOneFurniture(furniture : FurnitureTypes):Promise<void>{
-    // await axios.post<FurnitureTypes>(appConfig.furnitures, furniture)
+    await axios.post<FurnitureTypes>(appConfig.furnitures, furniture)
 }
+
+async function deleteFurniture(code :number):Promise<void>{
+    await axios.delete<void>(appConfig.furnitures+ code)
+}
+
 
 export default {
     getAllFurniture,
     getAllFurnitureTypes,
-    postOneFurniture
+    postOneFurniture,
+    deleteFurniture
 }

@@ -35,5 +35,14 @@ router.post("/furnitures", async( request: Request, response: Response,next: Nex
     }
 })
 
+router.delete("/furnitures/:code", async( request: Request, response: Response,next: NextFunction)=>{
+    try{
+        const code = +request.params.code
+        await ikeaLogic.deleteFurniture(code)
+        response.sendStatus(204)
+    }catch(err:any){
+        next(err)
+    }
+})
 
 export default router

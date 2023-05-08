@@ -32,9 +32,8 @@ function AddFurniture(): JSX.Element {
                 <input type="text" placeholder="color" {...register("color")}/><br></br>
                 <input type="text" placeholder="price" {...register("price")}/><br></br>
                 <input type="text" placeholder="dimensions" {...register("dimensions")}/><br></br>
-                {/* <input type="text" placeholder="furnitureTypeId" {...register("furnitureTypeId")}/> */}
-                {/* <option disabled value="">Select...</option> */}
-                <select name="furnitureTypeId" defaultValue="" {...register("furnitureTypeId")}>
+                
+                <select defaultValue="" {...register("furnitureTypeId")}>
                     <option disabled value={""}>select a category name </option>
                     {type && type.map(t=> <option key={t.furnitureTypeId} value={t.furnitureTypeId}>{t.furnitureType}</option> )}
                 </select><br></br>

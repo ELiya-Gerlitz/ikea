@@ -39,11 +39,22 @@ async function addFurniture(furnitureToAdd : FurnitureModel):Promise<FurnitureMo
     return furnitureToAdd
 }
 
+async function deleteFurniture(code : number):Promise<void>{
+    const sql = `
+    DELETE FROM furniture 
+    WHERE code = ?
+    `
+    const values = [code]
+    const info : OkPacket = await dal.execute(sql, values)
+  
+}
+
 
 
 
 export default {
     getAllFurnitureTypes,
     getAllFurnitures,
-    addFurniture
+    addFurniture,
+    deleteFurniture
 }
