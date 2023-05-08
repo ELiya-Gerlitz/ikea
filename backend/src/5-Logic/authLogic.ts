@@ -9,27 +9,28 @@ import OkPacket from "mysql"
 
 async function register(user:UserModel):Promise<string>{
     console.log("I am the beginning of authLogic")
-    const err= user.validate()
+    const err = user.validate()
     if(!err) throw new ValidationErrorModel(err)
 
     // check whether userName is already taken.
     const sql=`
         SELECT * FROM users
-        WHERE username= "${user.username}"
+        WHERE username = "${user.username}"
     `
-    const usernameTaken : OkPacket= await dal.execute(sql)
+    const usernameTaken  = await dal.execute(sql) //das (OkPacket) wirk nicht mit SELECT!!!
+    if(usernameTaken.length >0) throw new ValidationErrorModel("username is already in use!") 
 
-    if(usernameTaken.affectedRows>0) throw new ValidationErrorModel("username is already in use!")
+    // if(usernameTaken.affectedRows >=1) throw new ValidationErrorModel("username is already in use!") //das (OkPacket) wirk nicht mit SELECT!!!
 
     // save the new user in the DB
     const sql2save=`
         INSERT INTO users(firstName, lastName, username, password)
         VALUES ("${user.firstName}", "${user.lastName}", "${user.username}", "${user.password}") 
     `
-    const info: OkPacket= await dal.execute(sql2save)
-    user.userId=info.insertId
+    const info: OkPacket = await dal.execute(sql2save)
+    user.userId = info.insertId
 
-    const token= await cyber.createToken(user)
+    const token = await cyber.createToken(user)
     return token
 }
 

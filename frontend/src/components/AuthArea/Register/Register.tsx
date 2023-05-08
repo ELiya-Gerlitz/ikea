@@ -9,12 +9,15 @@ function Register(): JSX.Element {
     const navigate = useNavigate();
 
     const send = (data: UserModel) => {
+        if(sessionStorage.getItem("token")){
+            alert("You are already logged in!")
+        }else{
         authService.register(data)
-            .then(() => { console.log("successfully logged in"); navigate("/furniture") })
+            .then(() => { console.log("successfully logged in")
+             navigate("/furniture") })
             .catch((err: any) => console.log(err))
-    }
-
-
+              }
+         }
     return (
         <div className="Register Box">
 

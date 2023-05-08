@@ -6,14 +6,13 @@ import CredentialsModel from "../Models/CredentialsModel";
 
 
 async function register(user: UserModel):Promise<void>{
-        const response= await axios.post<string>(appConfig.registerURL, user)
-        const token= response.data
-        console.log(token)
+        const response = await axios.post<string>(appConfig.registerURL, user)
+        const token = response.data
         sessionStorage.setItem("token", token)
 }
 
 async function login(credentials: CredentialsModel):Promise<void>{
-    const response= await axios.post<string>(appConfig.loginURL, credentials)
+    const response = await axios.post<string>(appConfig.loginURL, credentials)
     const token= response.data
     sessionStorage.setItem("token", token)
 

@@ -4,16 +4,16 @@ import "./AddFurniture.css";
 import { useEffect, useState } from "react";
 import FurnitureService from "../../../Service/FurnitureService";
 import FurnitureTypes from "../../../Models/TypesModel";
+import { useNavigate } from "react-router-dom";
 
 function AddFurniture(): JSX.Element {
     const {handleSubmit, register} = useForm<FurnitureModel>()
     const [type, setType] = useState<FurnitureTypes[]>()
-
+    const navigate = useNavigate()
     useEffect(()=>{
         FurnitureService.getAllFurnitureTypes()
         .then(type=>{
             setType(type)
-            console.log(type)
         })
         .catch(err=>console.log(err))
     },[])
@@ -22,7 +22,9 @@ function AddFurniture(): JSX.Element {
         FurnitureService.postOneFurniture(info)
         .then(()=> {
             console.log(info)
-        alert("successfully added!")})
+        alert("successfully added!")
+        navigate("/furniture")
+    })
         .catch(err=>console.log(err))
     }
     return (

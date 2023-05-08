@@ -3,24 +3,27 @@ import "./AuthMenu.css";
 import UserModel from "../../../Models/UserModel";
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
+import authService from "../../../Service/authService";
 
 function AuthMenu(): JSX.Element {
  const navigate= useNavigate()
- const [user, setUser]=useState<UserModel>()
+//  const [user, setUser]=useState<UserModel>()
 
-    // useEffect(()=>{
-    //     setUser(AuthStore.getState().user)
+//  const [token, setToken] = useState<string>()
+//  useEffect(()=>{
+//     if(sessionStorage.getItem("token")){
+//         // setToken(sessionStorage.getItem("token"))
+//         authService.getAllUsers()
+//         .then(user => setUser(user))
+//         .catch((err: any)=>console.log(err))
+//     }
 
-    //     const unsubscribe = AuthStore.subscribe(() =>
-    //      setUser(AuthStore.getState().user)
-    // )
-        // return ()=> unsubscribe()
-    // },[])
-    
+//  },[])
+
 
     return (
         <div className="AuthMenu">
-<NavLink to={"/register"}>register</NavLink> | 
+<NavLink to={"/register"} >register</NavLink> | 
 <NavLink to={"/login"}>login</NavLink> |
 <NavLink to={"/logout"}>logout</NavLink> |
 			

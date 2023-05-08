@@ -11,9 +11,17 @@ function Login(): JSX.Element {
         const navigate = useNavigate();
     
         const send = (data: CredentialsModel) => {
-            authService.login(data)
-                .then(() => { console.log("successfully logged in"); navigate("/books") })
+            if(sessionStorage.getItem("token")){
+                alert("You are already logged in!")
+            }else{
+                authService.login(data)
+                .then(() => { 
+                    console.log("successfully logged in"); navigate("/books") 
+                navigate("/furniture")
+                })
                 .catch(err => console.log(err))
+            }
+         
         }
 
     return (

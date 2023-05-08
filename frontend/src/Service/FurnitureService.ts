@@ -21,8 +21,10 @@ async function postOneFurniture(furniture : FurnitureTypes):Promise<void>{
 }
 
 async function deleteFurniture(code :number):Promise<void>{
-    const headers = { authorization: "Bearer " + sessionStorage.getItem("token")}
+    const token = sessionStorage.getItem("token")
+    if(!token) alert("You must be logged in!")
 
+    const headers = { authorization: "Bearer " + token}
     await axios.delete<void>(appConfig.furnitures+ code, { headers })
 }
 

@@ -16,7 +16,10 @@ function Card(props: card): JSX.Element {
             alert("successfully deleted!")
             navigate("/home")
         })
-        .catch(err=> console.log(err))
+        .catch(err=> {
+            // alert(err.message)
+            console.log(err)}
+            )
      }
 
     return (
