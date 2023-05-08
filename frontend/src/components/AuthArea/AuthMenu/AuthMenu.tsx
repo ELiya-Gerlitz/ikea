@@ -21,7 +21,9 @@ function AuthMenu(): JSX.Element {
     return (
         <div className="AuthMenu">
 i am authMenu
-<NavLink to={"/register"}>register</NavLink>
+<NavLink to={"/register"}>register</NavLink> | 
+<NavLink to={"/login"}>login</NavLink> |
+<NavLink to={"/logout"}>logout</NavLink> |
 			
         </div>
     );

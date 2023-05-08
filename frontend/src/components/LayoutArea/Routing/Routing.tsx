@@ -4,6 +4,8 @@ import Listing from "../Listing/Listing";
 import AddFurniture from "../AddFurniture/AddFurniture";
 import Home from "../Home/Home";
 import Register from "../../AuthArea/Register/Register";
+import Login from "../../AuthArea/Login/Login";
+import Logout from "../../AuthArea/Logout/Logout";
 
 function Routing(): JSX.Element {
     return (
@@ -15,6 +17,8 @@ function Routing(): JSX.Element {
                 <Route path="/furniture" element={<Listing/>} />
                 <Route path="/add-furniture" element={<AddFurniture/>} />
                 <Route path="/register" element={<Register/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/logout" element={<Logout/>} />
             </Routes>
         </div>
     );
